@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import jp.mrtry.solomon.fragments.ListFragment
+import jp.mrtry.solomon.fragments.ViewerFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,10 +15,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        val listFragment = ListFragment();
+        //val listFragment = ListFragment()
+        val viewerFragment = ViewerFragment()
 
         val transactionManager = supportFragmentManager.beginTransaction()
-        transactionManager.add(R.id.container, listFragment)
+        //
+        // transactionManager.add(R.id.container, listFragment)
+        transactionManager.add(R.id.container, viewerFragment)
         transactionManager.commit()
     }
 
